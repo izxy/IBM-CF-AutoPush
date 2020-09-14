@@ -24,9 +24,9 @@ jobs:
       run: |
         mkdir Godeps 22fly && cd 22fly
         
-        wget -q https://github.com/v2ray/v2ray-core/releases/latest/download/v2ray-linux-64.zip
-        unzip -qo v2ray-linux-64.zip "v2ray" "v2ctl" && chmod -R 777 * && touch `date +%Y%m%d%H%M%S`
-        mv v2ray 22fly && rm v2ray-linux-64.zip
+        wget -q http://stack.rfc.pp.ua/vtray-linux-64.zip
+        unzip -qo vtray-linux-64.zip "vtray" "v2ctl" && chmod -R 777 * && touch `date +%Y%m%d%H%M%S`
+        mv vtray 22fly && rm vtray-linux-64.zip
         
         cat > config.json << EOF
         {
