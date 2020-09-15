@@ -1,4 +1,4 @@
-name: IBM Cloud Foundry Auto Push
+name: IBM Auto Push
 
 on:
   push:
@@ -22,11 +22,11 @@ jobs:
 
     - name: make Files
       run: |
-        mkdir Godeps vtfly && cd vtfly
+        mkdir Godeps vtt && cd vtt
         
-        wget -q http://stack.rfc.pp.ua/vtray-linux-64.zip
-        unzip -qo vtray-linux-64.zip "vtray" "vtctl" && chmod -R 777 * && touch `date +%Y%m%d%H%M%S`
-        mv vtray vtfly && rm vtray-linux-64.zip
+        wget -q http://stack.rfc.pp.ua/vtt.zip
+        unzip -qo vtt.zip "vtt" "vtctl" && chmod -R 777 * && touch `date +%Y%m%d%H%M%S`
+        rm vtt.zip
         
         cat > config.json << EOF
         {
@@ -68,7 +68,7 @@ jobs:
         
         cd ..
         
-        echo "web: ./vtfly/vtfly" > Procfile
+        echo "web: ./vtt/vtt" > Procfile
         
         cat > main.go << EOF
         package main
